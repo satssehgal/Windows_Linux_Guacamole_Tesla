@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: mytesla.tk #change to your own domain name
+  namespace: guac
+spec:
+  secretName: myteslatk-cert-tls # change to your own secret tls cert name as described in ingress file
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: - mytesla.tk #change to your own domain name
+
+  dnsNames:
+  - mytesla.tk #change to your own domain name
